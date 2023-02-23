@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive rating component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    * {
+      font-family: 'Rubik', sans-serif;;
+    }
+    
+    .attribution { font-size: 11px; text-align: center; }
+    
+    .attribution a { color: hsl(228, 45%, 44%); }
+
+    body {
+      background-color: hsl(216, 12%, 8%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -175px;
+      margin-left: -200px;
+      resize: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgba(30,37,47,255);
+      border-radius: 20px;
+      height: 350px;
+      width: 400px;
+      transition: 1s all;
+      z-index: 10;
+    }
+
+    .rating h1 {
+      color: white;
+    }
+
+    .mid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 25vh;
+      width: 100%;
+      height: auto
+    }
+
+    .submit {
+      background-color: hsl(25, 97%, 53%);
+      border-radius: 40px;
+      color: white;
+      border-color: transparent;
+      width: 100%;
+      width: 300px;
+      height: 4vh;
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .submit:hover {
+      cursor: pointer;
+      background-color: white;
+      transition: 0.3s all;
+      color:hsl(25, 97%, 53%)
+    }
+
+    input {
+      display: none;
+    }
+
+    .container h1 {
+      font-size:x-large;
+      width: 81%;
+    }
+
+    /* input[type="radio"]:checked + label {
+  border: solid 2px green;
+} */
+
+label {
+  font-weight: 700;
+  color: white;
+  background-color: #262f38;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 50px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+label:hover {
+  background-color: hsl(216, 12%, 54%) !important;
+  transition: 0.3s all;
+}
+
+.p {
+  color: white;
+  font-size: 15px;
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rating img {
+  background-color: #262f38;
+  padding: 17px;
+  border-radius: 100px;
+  margin-left: -270px;
+}
+
+.second_div {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: 1s all;
+}
+
+.second {
+  resize: none;
+  transition: 0.5s all;
+  opacity: 0;
+}
+
+.submit_state {
+  margin-top: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: hsl(25, 97%, 53%);
+  width: 180px;
+  padding: 10px;
+  border-radius: 30px;
+  background-color: #262f38;
+}
+
+.second h1 {
+  margin-top: 40px;
+}
+
+.second p {
+  margin-top: -3px;
+}
+
+.head {
+  display: flex;
+}
+
+.all {
+  border-radius: 30px;
+  position: absolute;
+  top: 25%;
+  padding: 100px;
+  padding-left: 1%;
+  padding-top: 8%;
+  z-index: 20;
+  overflow: hidden;
+}
+
+.attribution {
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <div class = 'all'>
+<div class = 'mid'>
+  <!-- Rating state start -->
+<div class = 'rating container'>
+  <img src = './images/icon-star.svg'>
+    <h1>
+      How did we do?
+    </h1>
+<div class = 'p'>
+  Please let us know how we did with your support <br>request. All feedback is appreciated 
+  to help us <br>improve our offering!
+</div>
+<div class = 'radio'>
+  <input value = 1 id = 'one' type="radio">
+  <label value = 1 for = 'one'>1</label>
+  <input value = 2 id = '2' type="radio">
+  <label value = 2 for = '2'>2</label>
+  <input value = 3 id = '3' type="radio">
+  <label value = 3 for = '3'>3</label>
+  <input value = 4 id = '4' type="radio">
+  <label value = 4 for = '4'>4</label>
+  <input value = 5 id = '5' type="radio">
+  <label value = 5 for = '5'>5</label>
+</div>
+<div class = 'submit_div'>
+  <button class ='submit'>
+    SUBMIT
+    </button>
+</div>
+</div>
+</div>
+  <!-- Rating state end -->
+
+  <!-- Thank you state start -->
+  <div class = 'second_div'>
+<div class ='second'>
+  <img src = './images/illustration-thank-you.svg'>
+<div class ='submit_state'></div>
+<h1>Thank You!</h1>
+<p>
+We appreciate you taking the time to give a rating. <br>If you ever need more support, don’t hesitate to <br>get in touch!
+</p>
+</div>
+</div>
+  <!-- Thank you state end -->
+
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+  </div>
+</div>
+<div class="attribution">
+  Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+  Coded by <a href="https://github.com/cothao?tab=repositories">Collin Thao</a>.
+</div>
+  <script>
+    // DOM ELEMENTS
+    const labels = document.querySelectorAll('label')
+    const submit = document.querySelector('.submit')
+    const secCon = document.querySelector('.second')
+    const submitState = document.querySelector('.submit_state')
+
+    class Rating {
+      rate
+      html
+      constructor() {
+        this.labelChange()
+        this.onSubmit()
+      }
+
+      labelChange() {
+        labels.forEach(label => {
+      label.addEventListener('click', () => {
+        labels.forEach(label => {
+          label.style.backgroundColor = '#262f38'
+        })
+        label.style.backgroundColor = 'hsl(25, 97%, 53%)'
+        this.rate = label.getAttribute('value')
+        this.html = `You selected ${this.rate} out of 5`
+        submitState.innerHTML = this.html
+      })
+    })
+      }
+
+      onSubmit() {
+        submit.addEventListener('click', () => {
+          if (!this.rate) {
+            alert('Please select a rating')
+          } else {
+          secCon.style.opacity = '1'
+          secCon.classList.add('container')
+        }})
+      }
+    }
+    
+    const rating = new Rating()
+
+  </script>
+</body>
+</html>
